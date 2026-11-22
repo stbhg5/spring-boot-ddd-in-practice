@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: backend5
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres # [호스트]:[포트]/[데이터베이스명]
+    username: postgres                             # PostgreSQL 사용자 계정
+    password: 3794qw                               # 설치 시 설정한 비밀번호
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update # 개발 시 update 또는 create, 운영 환경에서는 validate 또는 none 권장
+    show-sql: true     # 실행되는 SQL 쿼리를 콘솔에 출력
+    properties:
+      hibernate:
+        format_sql: true # 출력되는 SQL을 보기 좋게 정렬
+        dialect: org.hibernate.dialect.PostgreSQLDialect # 최신 부트(3.x 이상)에서는 자동 감지되므로 생략 가능
